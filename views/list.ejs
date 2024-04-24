@@ -1,6 +1,6 @@
 <%- include("header") -%>
     <div class="box" id="heading">
-        <h1>  <%= List_title %> !</h1>
+        <h1>  <%=List_title %> !</h1>
     </div>
     
 
@@ -9,8 +9,9 @@
         <form action="/delete" method="post">
              <div class="item">
             <input type="checkbox" name="checkedbox" value="<%=item.id%>" onChange="this.form.submit()">
-            <p> <%= item.name %> </p>
-        </div> 
+            <p> <%=item.name %> </p>
+        </div>
+        <input type="hidden" name="listName" value =" <%= List_title %>" > </input>
            </form>
        <% }); %>
   
@@ -18,7 +19,7 @@
     <form class="item" action="/"  method="post">
 
         <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-        <button type="submit" name="list" value = <%= List_title %> >+</button>
+        <button type="submit" name="list" value = <%=List_title %> >+</button>
     </form>  
        </div>   
 <%- include("footer") -%>
